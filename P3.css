@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: boder-box;
+    font-size: 30px;
+    font-family: gilroy;;
+
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+button{
+    padding:10px 28px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(55, 116, 202);
+    color: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+button::before{
+    content:"laptop";
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color: rgb(54, 91, 138);
+    top:0;
+    left:0;
+    z-index:-1;
+
+}
+button:hover::before{
+
+
+
+}

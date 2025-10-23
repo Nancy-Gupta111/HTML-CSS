@@ -1,0 +1,157 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #000; /* pure black background */
+  overflow-x: hidden;
+  font-family: 'monument', sans-serif;
+  color: #d8b4fe; /* light purple text fallback */
+  position: relative;
+}
+
+
+/* Main container */
+#main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Background animated purple gradient */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, 
+    #7c3aed, #c084fc, #8b5cf6, #a78bfa, #7c3aed);
+  background-size: 1000% 1000%;
+  animation: purpleGradientShift 30s ease infinite;
+  z-index: 1;
+  filter: brightness(0.25);
+  opacity: 0.8;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Purple gradient animation */
+@keyframes purpleGradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Image styling */
+#main img {
+  height: 700px;
+  width: 510px;
+  position: relative;
+  z-index: 20;
+  object-fit: cover;
+  border: 2px solid #a78bfa; /* soft purple border */
+  box-shadow: 0 0 25px #a78bfa;
+  border-radius: 10px;
+  transition: box-shadow 0.5s ease;
+}
+
+#main img:hover {
+  box-shadow: 0 0 40px #c084fc, 0 0 60px #7c3aed;
+}
+
+/* Text styling */
+#text {
+  font-size: 35px;
+  position: absolute;
+  font-family: monument, sans-serif;
+  width: 60%;
+  z-index: 30;
+  top: 16%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #c084fc;
+  text-shadow:
+    0 0 5px #c084fc,
+    0 0 10px #a78bfa,
+    0 0 20px #7c3aed,
+    0 0 40px #8b5cf6;
+  transition: color 1s ease;
+}
+
+/* Scroll divs container */
+#scroll-div, #scroll-div2, #scroll-div3 {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 25;
+  scrollbar-width: none; /* Firefox */
+}
+
+#scroll-div::-webkit-scrollbar,
+#scroll-div2::-webkit-scrollbar,
+#scroll-div3::-webkit-scrollbar {
+  display: none;
+}
+
+/* Positions */
+#scroll-div { top: 24%; }
+#scroll-div2 { top: 44%; }
+#scroll-div3 { top: 64%; }
+
+/* Scroll text styling */
+#scroll-div h1,
+#scroll-div2 h1,
+#scroll-div3 h1 {
+  display: inline-block;
+  font-size: 160px;
+  margin-right: 30px;
+  letter-spacing: 3px;
+  font-family: monument, sans-serif;
+  color: #c084fc;
+  text-shadow:
+    0 0 5px #c084fc,
+    0 0 10px #a78bfa,
+    0 0 20px #7c3aed,
+    0 0 40px #8b5cf6;
+  animation-name: scroll;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transition: color 1s ease;
+}
+
+/* Different animation directions */
+#scroll-div2 h1 {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #c084fc;
+  animation-direction: reverse;
+  text-shadow: none;
+}
+
+#scroll-div3 h1 {
+  animation-direction: reverse;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(calc(-100% - 32%));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

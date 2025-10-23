@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+#main{
+    height:100%;
+    width:100%;
+    background-color: hsla(0, 50%, 50%, 0.636);
+    display :flex;
+    
+}
+
+#part1{
+    height:100%;
+    width:26%;
+    /* background-color: brown; */
+}
+#part2{
+    height:100%;
+    width:50%;
+    background-color: blue;
+    background-image: url("https://images.unsplash.com/photo-1599041125553-a3b967646ca5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1968");
+    background: cover;
+    background-position: center;
+}
+#overlay{
+    height:100%;
+    width:100%;
+    background-color: rgba(226, 209, 209, 0);
+}
+#part3{
+    height:100%;
+    width:7%;
+    /* background-color: aqua; */
+}
+#text-div{
+    /* height:40%; */
+    position:absolute;
+    width: 800px;
+    /* background-color: brown; */
+    left: 18%;
+    top:50%;
+    transform:translate(0, -50%);
+}
+
+#text-div>h1{
+    font-size:150px;
+    font-family:monument;
+    font-weight: 400;
+    line-height:90%;
+    letter-spacing:10px;
+    color:#fff;
+    text-transform:uppercase;
+}
+#small-div{
+    height:900px;
+    width:900px;
+    /* background-color: blueviolet; */
+    background-image: url("https://images.unsplash.com/photo-1526925539332-aa3b66e35444?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvZGVyJTIwbW9kZWxzJTIwZGFyayUyMGdtYWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600");
+    position:absolute;
+    background: cover;
+    background-position: center;;
+    top:55%;
+    right:18%;
+    transform: translate(0,-50%);
+}
+#overlay{
+    height:100%;
+    width:100%;
+    background-color: rgba(250, 253, 255, 0);
+}
+#vertical-text{
+        position: absolute;
+        transform: rotate(90deg);
+          right:0%;
+          top:-2%;
+          z-index:-1;
+        transform-origin: 50% 50%; 
+        /* width:100%; */
+        /* background-color: blue; */
+
+}
+#vertical-text h1{
+    font-size:150px;
+    font-weight:300;
+    font-family:monument; 
+    align-items: center;
+    letter-spacing:7px;
+    color:transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+}
